@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="AntJSP:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/AntJSP_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="AntJSP/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="AntJSP" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
