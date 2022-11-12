@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function check(){
+            var price = document.form1.price.value;
+            var amount=document.form1.amount.value;
+            if(price==""){
+                alert("가격을 입력하세요.");
+                document.form1.price.focus();
+                return;
+            }
+            if(amount==""){
+                alert("수량을 입력하세요.");
+                document.form1.amount.focus();
+                return;
+            }
+            document.form1.submit();
+        }
+    </script>
+</head>
+<body>
+<form name="form1" action="button.jsp" method="post">
+    price: <input type="text" name="price"><br>
+    amount: <input type="text" name="amount"><br>
+    <!-- 버튼은 제출기능이 없다. -->
+    <button type="button" onclick="check()">OK</button>
+<!--    <input type="button" onclick="check()" value="OK">-->
+</form>
+</body>
+</html>

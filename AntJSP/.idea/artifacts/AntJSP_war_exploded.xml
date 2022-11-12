@@ -7,6 +7,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="AntJSP" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="ojdbc8" />
+          <element id="library" level="project" name="jstl-1.2" />
+        </element>
+        <element id="library" level="project" name="servlet-api" />
       </element>
     </root>
   </artifact>

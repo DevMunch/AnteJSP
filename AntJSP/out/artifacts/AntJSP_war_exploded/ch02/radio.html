@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form method="post" action="radio.jsp">
+<!--post 데이터를 보낼 때, get 데이터를 받을 때, action 받을 주소-->
+  이름: <input type="text" name="name"><br><!-- name 태그는 서버 쪽에서 식별할 변수.-->
+  성별:
+  <!--radio button은 name이 같아야 한다. value로 식별.-->
+  <input type="radio" name="gender" value="male" checked> male
+  <input type="radio" name="gender" value="female"> female
+<!--submit 데이터 전송-->
+  <input type="submit" value="OK">
+</form>
+</body>
+</html>
