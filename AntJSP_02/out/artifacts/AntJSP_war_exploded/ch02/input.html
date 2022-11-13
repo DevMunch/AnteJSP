@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function check(){
+            //제출
+            document.form1.action = "input_result.jsp";
+            document.form1.submit();
+        }
+    </script>
+</head>
+<body>
+<form name="form1" method="post">
+    이름: <input type="text" name="name"><br>
+    나이: <input type="text" name="age"><br>
+    <button type="button" onclick="check()">OK</button>
+</form>
+</body>
+</html>
