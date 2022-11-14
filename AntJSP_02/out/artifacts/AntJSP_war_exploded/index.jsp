@@ -12,7 +12,7 @@
   </head>
   <body>
   <%
-    response.sendRedirect("member_servlet/list.do");
+    response.sendRedirect("member_servlet/list.do ");
   %>
   </body>
 </html>
