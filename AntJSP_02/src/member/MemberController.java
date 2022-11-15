@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@WebServlet(name = "MemberController", value = "/member_servlet/*")
+//@WebServlet(name = "MemberController", value = "/member_servlet/*")
 public class MemberController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
