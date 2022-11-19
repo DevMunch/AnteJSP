@@ -28,6 +28,6 @@
 
 <!--    세션설정-->
     <session-config>
-        <session-timeout>30</session-timeout> <!--세션 시간설정 (분 단위)-->
+        <session-timeout>15</session-timeout> <!--세션 시간설정 (분 단위)-->
     </session-config>
 </web-app>
