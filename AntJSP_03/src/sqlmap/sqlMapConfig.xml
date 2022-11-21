@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- xml 지시어 -->
+
+<!-- xml 문서의 형식을 정의 -->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+    </typeAliases>
+    <environments default="">
+        <environment id="">
+            <transactionManager type="JDBC" />
+            <dataSource type="JNDI">
+                <property name="data_source" value="java:comp/env/oraDB" />
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 테이블과 클래스를 매핑한다.-->
+    <mappers>
+        <mapper resource="memo/memo.xml" />
+    </mappers>
+</configuration>

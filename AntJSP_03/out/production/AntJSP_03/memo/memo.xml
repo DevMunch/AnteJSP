@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memo">
+    <!--
+    id : 태그의 식별자, resultType : 레코드의 자료형
+    달러변수 : 따옴표가 추가되지 않음, 샵변수 : 타옵표가 추가된다.
+    -->
+    <select id="list" resultType="java.util.Map">
+        select idx,writer,memo,post_date
+        from memo
+        where ${search_option} like '%' || #{search} || '%'
+        order by idx desc
+    </select>
+    <select id="list_all" resultType="java.util.map">
+        select idx,writer,memo,to_char(post_date,'yyyy-mm-dd hh24:mi:ss') post_date
+        from memo
+        where writer like '%' || #{search} || '%'
+            or memo like '%' || #{search} || '%'
+        order by idx desc
+    </select>
+</mapper>
