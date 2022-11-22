@@ -6,19 +6,22 @@
   <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $(function() {
-    $("#chkAll").click(function() {
-      if ($("#chkAll").prop("checked")) {
-        $("input[name=idx]").prop("checked", true);
-      } else {
-        $("input[name=idx]").prop("checked", false);
-      }
+      $("#chkAll").click(function() {
+        if ($("#chkAll").prop("checked")) {
+          $("input[name=idx]").prop("checked", true);
+        } else {
+          $("input[name=idx]").prop("checked", false);
+        }
+      });
+      $("#btnAllDel").click(function()
+      {
+        document.form1.action="/memo_servlet/delete_all.do";
+        document.form1.submit();
+      });
     });
-    $("#btnAllDel").click(function() { document.form1.action="/jsp03/memo_servlet/delete_all.do";
-    document.form1.submit();
-  }); });
 
     function memo_del(idx) {
-    location.href = "/jsp03/memo_servlet/del.do?idx=" + idx;
+    location.href = "/memo_servlet/del.do?idx=" + idx;
   }
   </script>
 </head>
@@ -37,7 +40,7 @@
         <td><input type="checkbox" name="idx" value="${row.IDX}"></td>
         <td>${row.IDX}</td>
         <td>${row.WRITER}</td>
-        <td><a href="/jsp03/memo_servlet/view.do?idx=${row.IDX}">${row.MEMO}</a></td>
+        <td><a href="/memo_servlet/view.do?idx=${row.IDX}">${row.MEMO}</a></td>
         <td>${row.POST_DATE}</td>
         <td><input type="button" value="삭제" onclick="memo_del('${row.IDX}')"></td>
       </tr>

@@ -26,20 +26,19 @@
             });
         }
         function insert(){
-            var writer=$("#writer").val();
-            var memo=$("#memo").val();
-            // 객체로 만들어서 전달.
-            var params={"writer":writer,"memo":memo};
+            var writer = $("#writer").val();
+            var memo = $("#memo").val();
+            var params= {"writer": writer ,"memo": memo};
             $.ajax({
-               type:"post",
-               url:"/memo_servlet/insert.do",
-               data:params,
+                type : "post",
+                url : "/memo_servlet/insert.do",
+                data : params,
                 // 끝나면 다시 빈값으로 만들어준다.
-               success:function(){
-                   list("search=");
-                   $("#writer").val("");
-                   $("#memo").val("");
-               }
+                success : function() {
+                    list("search=");
+                    $("#writer").val("");
+                    $("#memo").val("");
+                }
             });
         }
     </script>

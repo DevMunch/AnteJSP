@@ -15,8 +15,8 @@
             </dataSource>
         </environment>
     </environments>
-    <!-- 테이블과 클래스를 매핑한다.-->
     <mappers>
-        <mapper resource="memo/memo.xml" />
+        <mapper resource="/memo/memo.xml" />
     </mappers>
 </configuration>
+<!-- 테이블과 클래스를 매핑한다.-->

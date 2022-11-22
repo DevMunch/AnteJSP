@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,6 +33,42 @@ public class MemoController extends HttpServlet {
             // 포워딩
             RequestDispatcher rd = request.getRequestDispatcher(page);
             rd.forward(request, response);
+        }else if(url.indexOf("insert.do")!=-1) {
+            String writer = request.getParameter("writer");
+            String memo = request.getParameter("memo");
+            Map<String, Object> map = new HashMap<>();
+            map.put("writer", writer);
+            map.put("memo", memo);
+            dao.insert(map);
+        }else if(url.indexOf("view.do")!=-1){
+            int idx=Integer.parseInt(request.getParameter("idx"));
+            Map<String,Object>map=dao.view(idx);
+            request.setAttribute("map",map);
+            String page="/memo/view.jsp";
+            RequestDispatcher rd = request.getRequestDispatcher(page);
+            rd.forward(request,response);
+        }else if(url.indexOf("update.do")!=-1){
+            int idx=Integer.parseInt(request.getParameter("idx"));
+            String writer=request.getParameter("writer");
+            String memo=request.getParameter("memo");
+            Map<String,Object> map=new HashMap<>();
+            map.put("idx",idx);
+            map.put("writer",writer);
+            map.put("memo",memo);
+            dao.update(map);
+            response.sendRedirect("/memo/memo.jsp");
+        }else if(url.indexOf("del.do")!=-1){
+            int idx=Integer.parseInt(request.getParameter("idx"));
+            dao.delete(idx);
+            response.sendRedirect("/memo/memo.jsp");
+        } else if(url.indexOf("delete_all.do")!=-1){
+            String[] idx=request.getParameterValues("idx");
+            if(idx!=null){
+                for(int i=0; i<idx.length; i++){
+                    dao.delete(Integer.parseInt(idx[i]));
+                }
+            }
+            response.sendRedirect(request.getContextPath()+"/memo/memo.jsp");
         }
     }
 

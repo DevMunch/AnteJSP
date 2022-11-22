@@ -15,7 +15,7 @@ public class MybatisManager {
         Reader reader=null;
         try{
             // mybatis 환경설정 파일을 읽음
-            reader=Resources.getResourceAsReader("sqlmap/sqlMapConfig.xml");
+            reader = Resources.getResourceAsReader("sqlmap/sqlMapConfig.xml");
             instance = new SqlSessionFactoryBuilder().build(reader); // SqlSessionFactory 생성
         }catch (Exception e){
             e.printStackTrace();
