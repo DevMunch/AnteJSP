@@ -17,6 +17,7 @@
     </environments>
     <mappers>
         <mapper resource="/memo/memo.xml" />
+        <mapper resource="/survey/survey.xml"/>
     </mappers>
 </configuration>
 <!-- 테이블과 클래스를 매핑한다.-->
