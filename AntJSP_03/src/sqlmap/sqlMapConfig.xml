@@ -16,9 +16,10 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="/memo/memo.xml" />
-        <mapper resource="/survey/survey.xml"/>
-        <mapper resource="/guestbook/guestbook.xml" />
+        <mapper resource="memo/memo.xml" />
+        <mapper resource="survey/survey.xml"/>
+        <mapper resource="guestbook/guestbook.xml" />
+        <mapper resource="page/emp.xml"/>
     </mappers>
 </configuration>
 <!-- 테이블과 클래스를 매핑한다.-->
