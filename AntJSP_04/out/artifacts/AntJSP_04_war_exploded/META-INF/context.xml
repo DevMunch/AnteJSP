@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/">
+    <WatchedResource>
+        WEB-INF/web.xml
+    </WatchedResource>
+    <!--DB 연결 Connection Pool-->
+    <Resource name="oraDB"
+              auth="Container"
+              driverClassName="oracle.jdbc.driver.OracleDriver"
+              maxTotal="50"
+              maxIdle="10"
+              maxWaitMillis="-1"
+              type="javax.sql.DataSource"
+              url="jdbc:oracle:thin:@localhost:1521/xe"
+              username="ora_user" password="1234"/>
+</Context>
