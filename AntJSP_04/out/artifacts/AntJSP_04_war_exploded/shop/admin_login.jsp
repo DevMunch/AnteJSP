@@ -27,10 +27,6 @@
       <td><input type="password" name="passwd"></td>
     </tr>
     <tr>
-      <td>아이디</td>
-      <td><input name="userid"></td>
-    </tr>
-    <tr>
       <td colspan="2" align="center">
         <input type="submit" value="로그인">
       </td>
