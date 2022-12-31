@@ -6,6 +6,7 @@ import sqlmap.MybatisManager;
 import java.util.List;
 
 public class CartDAO {
+    //
     public List<CartDTO> cart_money(){
         SqlSession session = MybatisManager.getInstance().openSession();
         List<CartDTO> items = session.selectList("cart.product_money");
@@ -27,7 +28,7 @@ public class CartDAO {
         }
     }
 
-    // 장바구니 목록
+    // 장바구니 세부 목록
     public List<CartDTO> list_cart(String userid){
         SqlSession session = null;
         List<CartDTO>list = null;
@@ -56,7 +57,7 @@ public class CartDAO {
         }
     }
 
-    // 수정
+    // 장바구니 목록 수정
     public void update_cart(CartDTO dto){
         SqlSession session = null;
         try{
@@ -84,7 +85,7 @@ public class CartDAO {
         }
     }
 
-    // 총 금액
+    // 장바구니 총 금액
     public int sum_money(String userid){
         int total = 0;
         SqlSession session = MybatisManager.getInstance().openSession();
